@@ -19,9 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'qwerty'
 total = 0
-@app.before_first_request
-def creat_all():
-    db.create_all()
+
   
 @app.route('/')
 def index():
@@ -141,9 +139,5 @@ def bookGenre():
                
   
 if __name__ == '__main__':
-    from db import db,login_manager
-    db.init_app(app)
-    login_manager.init_app(app)
-    login_manager.login_view = 'login'
     app.run(port=5000,debug=True)
     

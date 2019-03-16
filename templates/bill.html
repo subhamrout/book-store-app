@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="jumbotron">
+        {% for d in data %}
+            {{d}}
+         {% endfor %}
+         
+    <p> The total Amount is:</p>
+    {{total}}        
+    </div>
+
+{% endblock %}
